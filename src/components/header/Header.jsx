@@ -1,47 +1,91 @@
-import React, { useState, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './Header.module.css';
 import { ReactComponent as Logo } from '../../assets/shared/logo.svg';
+import { ReactComponent as Hamburger } from '../../assets/shared/icon-hamburger.svg';
+import { ReactComponent as Close } from '../../assets/shared/icon-close.svg';
+import { NavLink, useLocation } from 'react-router-dom';
+import paths from '../../pages/Paths';
 
 const Header = () => {
-  const [leftOffset, setLeftOffset] = useState(0);
-  const ulElement = useRef(null);
-  const handleMoveIndicator = (e) => {
-    const ulSizes = ulElement.current.getBoundingClientRect();
+  const [showMobileNavbar, setShowMobileNavbar] = useState(false);
+  const navbarRef = useRef(null);
 
-    const { left, width } = e.currentTarget.getBoundingClientRect();
-    console.log(ulSizes, left, width);
+  const handleNavbar = (e) => {
+    if (
+      !showMobileNavbar ||
+      !navbarRef.current ||
+      navbarRef.current.contains(e.target)
+    ) {
+      return;
+    }
+    setShowMobileNavbar(false);
   };
+  useEffect(() => {
+    document.addEventListener('click', handleNavbar);
+
+    return () => {
+      document.removeEventListener('click', handleNavbar);
+    };
+  }, [showMobileNavbar]);
+
+  const { pathname } = useLocation();
+
   return (
     <header className={styles.header}>
       <Logo className={styles['header--logo']} />
       <div className={styles['header--line']}></div>
-      <nav className={styles['header--nav']}>
-        <ul ref={ulElement}>
-          <li
-            className={`${styles['nav--item']} navtext`}
-            onMouseEnter={handleMoveIndicator}
+
+      <button
+        className={styles['header--hamburger']}
+        onClick={(e) => {
+          e.stopPropagation();
+          setShowMobileNavbar(true);
+        }}
+      >
+        <Hamburger />
+      </button>
+      <nav
+        className={`${styles['header--nav']} ${
+          !showMobileNavbar ? styles['header--nav__hide'] : ''
+        }`}
+        ref={navbarRef}
+      >
+        <button
+          className={styles['header--nav--close']}
+          onClick={() => setShowMobileNavbar(false)}
+        >
+          <Close />
+        </button>
+        <ul>
+          {paths.map(({ path }, index) => (
+            <li
+              className={`${styles['nav--item']} ${
+                path === pathname ? styles['nav--item__active'] : ''
+              }  navtext`}
+              key={path}
+            >
+              <NavLink to={path}>
+                <span className={styles['nav--item__bold']}>0{index}</span>{' '}
+                {path.replace('/', '')}
+              </NavLink>
+            </li>
+          ))}
+          {/* <li
+            className={`${styles['nav--item']} ${styles['nav--item__active']} navtext`}
           >
-            <span className={styles['nav--item__bold']}>00</span> Home
+            <NavLink to={'/home'}>
+              <span className={styles['nav--item__bold']}>00</span> Home
+            </NavLink>
           </li>
-          <li
-            className={`${styles['nav--item']} navtext`}
-            onMouseEnter={handleMoveIndicator}
-          >
+          <li className={`${styles['nav--item']} navtext`}>
             <span className={styles['nav--item__bold']}>01</span> Destination
           </li>
-          <li
-            className={`${styles['nav--item']} navtext`}
-            onMouseEnter={handleMoveIndicator}
-          >
+          <li className={`${styles['nav--item']} navtext`}>
             <span className={styles['nav--item__bold']}>02</span> Crew
           </li>
-          <li
-            className={`${styles['nav--item']} navtext`}
-            onMouseEnter={handleMoveIndicator}
-          >
+          <li className={`${styles['nav--item']} navtext`}>
             <span className={styles['nav--item__bold']}>03</span> Technology
-          </li>
-          <li className={styles.indicator} style={{ left: leftOffset }}></li>
+          </li> */}
         </ul>
       </nav>
     </header>

@@ -7,6 +7,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+button,
+input,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
 :root {
   --dark: #0b0d17;
   --primary: #d0d6f9;
@@ -47,10 +52,20 @@ body {
   min-height: 100vh;
 
   background-color: var(--dark);
-  background-image: url('assets/home/background-home-desktop.jpg');
+  background-image: url('assets/home/background-home-mobile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top right;
+  background-position: bottom right;
 
   color: var(--light);
+}
+@media screen and (min-width: 375px) {
+  body {
+    background-image: url('assets/home/background-home-tablet.jpg');
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    background-image: url('assets/home/background-home-desktop.jpg');
+  }
 }
