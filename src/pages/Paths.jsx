@@ -1,19 +1,24 @@
+import Crew from './crew/Crew';
+import Destination from './desination/Destination';
+import Home from './home/Home';
+import Technology from './technology/Technology';
+
 const paths = [
   {
     path: '/home',
-    element: <h1>home</h1>,
+    element: <Home />,
   },
   {
     path: '/destination',
-    element: <h1>destination</h1>,
+    element: <Destination />,
   },
   {
     path: '/crew',
-    element: <h1>crew</h1>,
+    element: <Crew />,
   },
   {
     path: '/technology',
-    element: <h1>technology</h1>,
+    element: <Technology />,
   },
 ];
 

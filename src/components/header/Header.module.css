@@ -1,10 +1,15 @@
+body {
+  padding-top: 102px;
+}
 .header {
   width: 100vw;
+  top: 0;
   position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 24px;
+  z-index: 1;
 }
 
 .header--hamburger,
@@ -65,6 +70,9 @@
   font-weight: 700;
 }
 @media screen and (min-width: 560px) {
+  body {
+    padding-top: 202px;
+  }
   .header--hamburger,
   .header--nav--close {
     display: none;
@@ -107,6 +115,9 @@
 }
 
 @media screen and (min-width: 1100px) {
+  body {
+    padding-top: 212px;
+  }
   /* desktop */
   .header {
     top: 40px;

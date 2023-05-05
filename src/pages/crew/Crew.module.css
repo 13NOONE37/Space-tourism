@@ -1,0 +1,16 @@
+body:has(.crew) {
+  background-image: url('../../assets/crew/background-crew-mobile.jpg');
+}
+@media screen and (min-width: 375px) {
+  body:has(.crew) {
+    background-image: url('../../assets/crew/background-crew-tablet.jpg');
+  }
+}
+@media screen and (min-width: 1100px) {
+  body:has(.crew) {
+    background-image: url('../../assets/crew/background-crew-desktop.jpg');
+  }
+}
+.crew {
+  width: 100%;
+}

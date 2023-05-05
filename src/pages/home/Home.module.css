@@ -1,0 +1,137 @@
+body:has(.home) {
+  background-image: url('../../assets/home/background-home-mobile.jpg');
+}
+@media screen and (min-width: 375px) {
+  body:has(.home) {
+    background-image: url('../../assets/home/background-home-tablet.jpg');
+  }
+}
+@media screen and (min-width: 1100px) {
+  body:has(.home) {
+    background-image: url('../../assets/home/background-home-desktop.jpg');
+  }
+}
+.home {
+  width: 100%;
+  display: grid;
+  grid-gap: 30px;
+  place-items: center;
+  padding: 0 30px;
+}
+.home--heading--1 {
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 2.7px;
+}
+.home--heading--2 {
+  text-transform: uppercase;
+  font-size: 80px;
+}
+.home--paragraph {
+  color: var(--primary);
+  font-size: 15px;
+  line-height: 25px;
+  text-align: center;
+}
+.home--cta {
+  margin-top: 50px;
+  cursor: pointer;
+
+  background-color: var(--light);
+
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: var(--dark);
+  display: grid;
+  place-items: center;
+
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+
+  color: #0b0d17;
+  border: none;
+  outline: none;
+  user-select: none;
+}
+.home--cta::after {
+  content: '';
+  width: 164%;
+  height: 164%;
+  border-radius: 50%;
+
+  background-color: var(--light);
+  opacity: 0.1;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%) scale(0);
+  transform-origin: center;
+  transition: all 0.25s ease-in-out;
+}
+.home--cta:hover::after,
+.home--cta:focus::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+@media screen and (min-width: 560px) {
+  .home {
+    padding: 0 160px;
+  }
+  .home--heading--1 {
+    font-size: 20px;
+    letter-spacing: 3.4px;
+  }
+  .home--heading--2 {
+    font-size: 150px;
+  }
+  .home--paragraph {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .home--cta {
+    font-size: 32px;
+    width: 242px;
+    height: 242px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .home {
+    padding: calc(387px - 212px) 165px;
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 'heading1 __' 'heading2 cta' 'paragraph cta';
+  }
+  .home--heading--1 {
+    grid-area: heading1;
+
+    width: 100%;
+    text-align: start;
+    font-size: 28px;
+    letter-spacing: 4.7px;
+  }
+  .home--heading--2 {
+    width: 100%;
+    text-align: start;
+    grid-area: heading2;
+  }
+  .home--paragraph {
+    grid-area: paragraph;
+
+    text-align: start;
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .home--cta {
+    justify-self: end;
+    grid-area: cta;
+    width: 274px;
+    height: 274px;
+  }
+}

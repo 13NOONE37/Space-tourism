@@ -32,7 +32,9 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <Logo className={styles['header--logo']} />
+      <NavLink to={'/home'}>
+        <Logo className={styles['header--logo']} />
+      </NavLink>
       <div className={styles['header--line']}></div>
 
       <button

@@ -52,20 +52,9 @@ body {
   min-height: 100vh;
 
   background-color: var(--dark);
-  background-image: url('assets/home/background-home-mobile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom right;
 
   color: var(--light);
-}
-@media screen and (min-width: 375px) {
-  body {
-    background-image: url('assets/home/background-home-tablet.jpg');
-  }
-}
-@media screen and (min-width: 768px) {
-  body {
-    background-image: url('assets/home/background-home-desktop.jpg');
-  }
 }
