@@ -19,19 +19,25 @@ body:has(.home) {
   padding: 0 30px;
 }
 .home--heading--1 {
-  text-transform: uppercase;
+  font-family: 'Barlow Condensed';
   font-size: 16px;
+  font-weight: 400;
   letter-spacing: 2.7px;
+
+  text-transform: uppercase;
 }
 .home--heading--2 {
-  text-transform: uppercase;
+  font-family: 'Bellefair';
   font-size: 80px;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 .home--paragraph {
-  color: var(--primary);
+  font-family: 'Barlow Condensed';
   font-size: 15px;
   line-height: 25px;
   text-align: center;
+  color: var(--primary);
 }
 .home--cta {
   margin-top: 50px;
@@ -39,11 +45,15 @@ body:has(.home) {
 
   background-color: var(--light);
 
+  font-family: 'Bellefair';
   font-size: 20px;
+  letter-spacing: 1.25px;
+  text-align: center;
+
   text-transform: uppercase;
-  letter-spacing: 2px;
   text-decoration: none;
   color: var(--dark);
+
   display: grid;
   place-items: center;
 
@@ -52,7 +62,6 @@ body:has(.home) {
   border-radius: 50%;
   position: relative;
 
-  color: #0b0d17;
   border: none;
   outline: none;
   user-select: none;
@@ -79,8 +88,11 @@ body:has(.home) {
   transform: translate(-50%, -50%) scale(1);
 }
 @media screen and (min-width: 560px) {
-  .home {
-    padding: 0 160px;
+  body:has(.home) {
+    padding-top: 202px;
+  }
+  .home > * {
+    max-width: 450px;
   }
   .home--heading--1 {
     font-size: 20px;
@@ -92,6 +104,7 @@ body:has(.home) {
   .home--paragraph {
     font-size: 16px;
     line-height: 28px;
+    padding: 0 50px;
   }
   .home--cta {
     font-size: 32px;
@@ -127,6 +140,9 @@ body:has(.home) {
     text-align: start;
     font-size: 18px;
     line-height: 32px;
+    padding: unset;
+    width: 354px;
+    justify-self: start;
   }
   .home--cta {
     justify-self: end;

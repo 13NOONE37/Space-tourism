@@ -59,35 +59,24 @@ const Header = () => {
           <Close />
         </button>
         <ul>
-          {paths.map(({ path }, index) => (
-            <li
-              className={`${styles['nav--item']} ${
-                path === pathname ? styles['nav--item__active'] : ''
-              }  navtext`}
-              key={path}
-            >
-              <NavLink to={path}>
-                <span className={styles['nav--item__bold']}>0{index}</span>{' '}
-                {path.replace('/', '')}
-              </NavLink>
-            </li>
-          ))}
-          {/* <li
-            className={`${styles['nav--item']} ${styles['nav--item__active']} navtext`}
-          >
-            <NavLink to={'/home'}>
-              <span className={styles['nav--item__bold']}>00</span> Home
-            </NavLink>
-          </li>
-          <li className={`${styles['nav--item']} navtext`}>
-            <span className={styles['nav--item__bold']}>01</span> Destination
-          </li>
-          <li className={`${styles['nav--item']} navtext`}>
-            <span className={styles['nav--item__bold']}>02</span> Crew
-          </li>
-          <li className={`${styles['nav--item']} navtext`}>
-            <span className={styles['nav--item__bold']}>03</span> Technology
-          </li> */}
+          {paths.map(
+            ({ path }, index) =>
+              index > 0 && (
+                <li
+                  className={`${styles['nav--item']} ${
+                    path === pathname ? styles['nav--item__active'] : ''
+                  }  navtext`}
+                  key={path}
+                >
+                  <NavLink to={path}>
+                    <span className={styles['nav--item__bold']}>
+                      0{index - 1}
+                    </span>{' '}
+                    {path.replace('/', '')}
+                  </NavLink>
+                </li>
+              ),
+          )}
         </ul>
       </nav>
     </header>

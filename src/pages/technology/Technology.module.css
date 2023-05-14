@@ -13,4 +13,229 @@ body:has(.technology) {
 }
 .technology {
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto, 3);
+  place-items: center;
+}
+
+@keyframes textShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.heading--1 {
+  font-family: 'Barlow Condensed';
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: textShow 0.75s ease-out forwards;
+}
+.heading--1__gray {
+  margin-right: 18px;
+  font-weight: 700;
+  opacity: 0.25;
+}
+.technology img {
+  margin-top: 32px;
+  width: 100vw;
+  opacity: 0;
+  animation: textShow 1.25s ease-out forwards;
+}
+
+.technologyInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+}
+.dotes {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+
+  margin-top: 34px;
+  margin-bottom: 26px;
+}
+.dot {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-family: 'Bellefair';
+  font-size: 16px;
+  color: var(--light);
+
+  outline: none;
+  background-color: transparent;
+  transition: all 0.25s ease-in-out;
+}
+
+.dot:hover,
+.dot:focus {
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+.dot__active {
+  border: 1px solid rgba(255, 255, 255, 1);
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+.technologyInfo--terminology {
+  font-family: 'Barlow Condensed';
+  font-size: 14px;
+  letter-spacing: 2.3px;
+  text-align: center;
+
+  text-transform: uppercase;
+  color: var(--primary);
+
+  opacity: 1;
+  /* animation: textShow 0.75s ease-out forwards; */
+}
+.technologyInfo--name {
+  font-family: 'Bellefair';
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+
+  text-transform: uppercase;
+
+  opacity: 0;
+  animation: textShow 0.75s ease-out forwards;
+  margin-top: 9px;
+  margin-bottom: 16px;
+}
+
+.technologyInfo--description {
+  font-family: 'Barlow';
+  font-size: 15px;
+  line-height: 25px;
+  text-align: center;
+  color: var(--primary);
+
+  opacity: 0;
+  animation: textShow 0.75s ease-out forwards;
+}
+
+@media screen and (min-width: 560px) {
+  body:has(.technology) {
+    padding-top: 136px;
+  }
+  .dotes {
+    margin-top: 56px;
+    margin-bottom: 45px;
+  }
+  .dot {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .heading--1 {
+    margin-left: 24px;
+    justify-self: start;
+    font-size: 20px;
+    letter-spacing: 3.4px;
+  }
+  .technology img {
+    margin-top: 60px;
+  }
+
+  .technologyInfo {
+    width: 458px;
+  }
+
+  .technologyInfo--terminology {
+    font-size: 16px;
+    letter-spacing: 2.700000047683716px;
+  }
+  .technologyInfo--name {
+    font-size: 40px;
+    margin: 16px 0;
+  }
+  .technologyInfo--description {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  body:has(.technology) {
+    padding-top: 212px;
+  }
+  .technology {
+    grid-template-columns: 1fr 515px;
+    grid-template-rows: auto 527px;
+    grid-template-areas: 'heading _' 'technologyInfo image';
+    gap: 26px 0;
+    padding-left: 166px;
+  }
+
+  .heading--1 {
+    grid-area: heading;
+    justify-self: start;
+
+    font-size: 28px;
+    letter-spacing: 4.7px;
+  }
+  .technology picture {
+    grid-area: image;
+  }
+  .technology img {
+    margin-top: unset;
+    width: 100%;
+  }
+
+  .technologyInfo {
+    width: 100%;
+    padding: unset;
+    padding-right: 58px;
+    padding-left: 24px;
+
+    grid-area: technologyInfo;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0 90px;
+    grid-template-areas: 'dotes terminology' 'dotes name' 'dotes description';
+
+    place-items: start start;
+  }
+  .dotes {
+    grid-area: dotes;
+    flex-direction: column;
+    margin-top: unset;
+    margin-bottom: unset;
+  }
+  .dot {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+  }
+
+  .technologyInfo--terminology {
+    grid-area: terminology;
+    font-size: 16px;
+    letter-spacing: 2.7;
+  }
+  .technologyInfo--name {
+    grid-area: name;
+    font-size: 56px;
+    margin-top: 12px;
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  .technologyInfo--description {
+    grid-area: description;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: left;
+  }
 }

@@ -5,6 +5,10 @@ import Technology from './technology/Technology';
 
 const paths = [
   {
+    path: '/',
+    element: <Home />,
+  },
+  {
     path: '/home',
     element: <Home />,
   },

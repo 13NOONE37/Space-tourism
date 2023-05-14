@@ -13,4 +13,233 @@ body:has(.crew) {
 }
 .crew {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes textShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.heading--1 {
+  font-family: 'Barlow Condensed';
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: textShow 0.75s ease-out forwards;
+}
+.heading--1__gray {
+  margin-right: 18px;
+  font-weight: 700;
+  opacity: 0.25;
+}
+.crew img {
+  margin-top: 32px;
+  height: 222px;
+  opacity: 0;
+  animation: textShow 1.25s ease-out forwards;
+}
+.line {
+  width: calc(100% - 84px);
+  height: 1px;
+
+  background: #383b4b;
+}
+
+.pilotInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+}
+.dotes {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+
+  margin: 32px 0;
+}
+.dot {
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: var(--light);
+  opacity: 0.17;
+  transition: all 0.25s ease-in-out;
+}
+
+.dot:hover,
+.dot:focus {
+  opacity: 0.5;
+}
+.dot__active {
+  opacity: 1 !important ;
+}
+@keyframes textShowOpacityHalf {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+.pilotInfo--role {
+  font-family: 'Bellefair';
+  font-weight: 400;
+  text-align: center;
+
+  text-transform: uppercase;
+  color: var(--light);
+
+  opacity: 0.5;
+  animation: textShowOpacityHalf 0.75s ease-out forwards;
+}
+.pilotInfo--name {
+  font-family: 'Bellefair';
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+
+  text-transform: uppercase;
+
+  margin-top: 8px;
+
+  opacity: 0;
+  animation: textShow 0.75s ease-out forwards;
+}
+.pilotInfo--bio {
+  font-family: 'Barlow';
+  font-size: 15px;
+  line-height: 25px;
+  text-align: center;
+  color: var(--primary);
+
+  margin-top: 16px;
+
+  opacity: 0;
+  animation: textShow 0.75s ease-out forwards;
+}
+
+@media screen and (min-width: 560px) {
+  body:has(.crew) {
+    padding-top: 136px;
+  }
+
+  .crew {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    justify-items: center;
+    padding-bottom: 0;
+    height: calc(100vh - 136px);
+  }
+  .dotes {
+    grid-row-start: 3;
+  }
+  .crew img {
+    height: 100%;
+    align-self: end;
+    grid-row: 3/ 3 span;
+  }
+  .line {
+    display: none;
+  }
+  .heading--1 {
+    justify-self: start;
+    font-size: 20px;
+    letter-spacing: 3.4px;
+    margin-left: 24px;
+  }
+
+  .pilotInfo {
+    margin-top: 60px;
+    padding: 0 80px;
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+  }
+  .dotes {
+    grid-row-start: 4;
+  }
+  .pilotInfo--role {
+    font-size: 24px;
+  }
+  .pilotInfo--name {
+    font-size: 40px;
+  }
+  .pilotInfo--bio {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  body:has(.crew) {
+    padding-top: 212px;
+  }
+  .crew {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 34px auto;
+    grid-template-areas: 'heading _' 'pilotInfo image';
+
+    justify-items: center;
+    padding: 0 166px;
+    padding-bottom: 0;
+    height: calc(100vh - 212px);
+  }
+  .crew img {
+    grid-area: image;
+    align-self: end;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .dotes {
+    justify-self: start;
+    gap: 24px;
+    margin-top: 120px;
+  }
+  .dot {
+    width: 15px;
+    height: 15px;
+  }
+  .heading--1 {
+    grid-area: heading;
+    font-size: 28px;
+    letter-spacing: 4.7px;
+  }
+  .pilotInfo {
+    margin-top: 154px;
+
+    padding: 0;
+    align-self: start;
+    justify-self: start;
+    grid-area: pilotInfo;
+  }
+  .pilotInfo--role {
+    font-size: 32px;
+    text-align: start;
+  }
+  .pilotInfo--name {
+    font-size: 56px;
+    text-align: start;
+    margin-top: 15px;
+  }
+  .pilotInfo--bio {
+    font-size: 18px;
+    line-height: 32px;
+    text-align: start;
+    margin-top: 27px;
+    padding-right: 160px;
+  }
 }
