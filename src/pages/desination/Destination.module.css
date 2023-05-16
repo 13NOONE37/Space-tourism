@@ -22,8 +22,6 @@ body:has(.destination) {
   font-weight: 400;
   letter-spacing: 2.7px;
   text-transform: uppercase;
-  opacity: 0;
-  animation: textShow 0.75s ease-out forwards;
 }
 @keyframes textShow {
   from {
@@ -31,6 +29,16 @@ body:has(.destination) {
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes textShowMove {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 .destination--heading--1__gray {
@@ -43,7 +51,7 @@ body:has(.destination) {
   gap: 27px;
   margin-top: 26px;
   opacity: 0;
-  animation: textShow 0.75s ease-out forwards;
+  animation: textShow 0.75s ease forwards;
 }
 
 .names--button {
@@ -78,7 +86,7 @@ body:has(.destination) {
   position: relative;
   margin-top: 32px;
   opacity: 0;
-  animation: textShow 0.75s ease-out forwards;
+  animation: textShow 0.75s ease forwards;
 }
 .slider--images {
   position: absolute;
@@ -100,7 +108,7 @@ body:has(.destination) {
   height: 170px;
   margin-top: 32px;
   opacity: 0;
-  animation: textShow 1.25s ease-out forwards;
+  animation: textShow 1.25s ease forwards;
 }
 .desc {
 }
@@ -113,7 +121,7 @@ body:has(.destination) {
   text-transform: uppercase;
   margin-top: 20px;
   opacity: 0;
-  animation: textShow 0.75s ease-out forwards;
+  animation: textShow 0.75s ease forwards;
 }
 .desc--description {
   font-family: 'Barlow';
@@ -125,7 +133,7 @@ body:has(.destination) {
   margin-bottom: 32px;
   padding: 0 48px;
   opacity: 0;
-  animation: textShow 0.75s ease-out forwards;
+  animation: textShow 0.75s 0.25s ease forwards;
 }
 .desc--line {
   width: 100%;
@@ -142,14 +150,9 @@ body:has(.destination) {
   justify-content: center;
   align-items: center;
   margin-top: 32px;
-}
-.desc--info:nth-child(1) {
+
   opacity: 0;
-  animation: textShow 0.75s 0.25s ease-out forwards;
-}
-.desc--info:nth-child(2) {
-  opacity: 0;
-  animation: textShow 0.75s 0.25s ease-out forwards;
+  animation: textShowMove 0.75s ease forwards;
 }
 .desc--info h3 {
   font-family: 'Barlow Condensed';

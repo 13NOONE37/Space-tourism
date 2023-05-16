@@ -7,7 +7,7 @@ import Technology2Portrait from '../../assets/technology/image-space-capsule-por
 import Technology3Landscape from '../../assets/technology/image-spaceport-landscape.jpg';
 import Technology3Portrait from '../../assets/technology/image-spaceport-portrait.jpg';
 
-import data from '../../../starter-code/data.json';
+import data from '../../assets/data.json';
 
 export default function Technology() {
   const [currentTechnology, setCurrentTechnology] = useState(0);

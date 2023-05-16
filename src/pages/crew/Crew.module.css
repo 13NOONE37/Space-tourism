@@ -34,8 +34,6 @@ body:has(.crew) {
   font-weight: 400;
   letter-spacing: 2.7px;
   text-transform: uppercase;
-  opacity: 0;
-  animation: textShow 0.75s ease-out forwards;
 }
 .heading--1__gray {
   margin-right: 18px;
@@ -46,7 +44,7 @@ body:has(.crew) {
   margin-top: 32px;
   height: 222px;
   opacity: 0;
-  animation: textShow 1.25s ease-out forwards;
+  animation: textShow 0.75s ease forwards;
 }
 .line {
   width: calc(100% - 84px);
@@ -103,7 +101,7 @@ body:has(.crew) {
   color: var(--light);
 
   opacity: 0.5;
-  animation: textShowOpacityHalf 0.75s ease-out forwards;
+  animation: textShowOpacityHalf 0.75s ease forwards;
 }
 .pilotInfo--name {
   font-family: 'Bellefair';
@@ -116,7 +114,7 @@ body:has(.crew) {
   margin-top: 8px;
 
   opacity: 0;
-  animation: textShow 0.75s ease-out forwards;
+  animation: textShow 0.75s ease forwards;
 }
 .pilotInfo--bio {
   font-family: 'Barlow';
@@ -128,7 +126,7 @@ body:has(.crew) {
   margin-top: 16px;
 
   opacity: 0;
-  animation: textShow 0.75s ease-out forwards;
+  animation: textShow 0.75s ease forwards;
 }
 
 @media screen and (min-width: 560px) {

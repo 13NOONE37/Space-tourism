@@ -5,7 +5,7 @@ import Person2 from '../../assets/crew/image-mark-shuttleworth.webp';
 import Person3 from '../../assets/crew/image-victor-glover.webp';
 import Person4 from '../../assets/crew/image-anousheh-ansari.webp';
 
-import data from '../../../starter-code/data.json';
+import data from '../../assets/data.json';
 
 export default function Crew() {
   const [currentCrew, setCurrentCrew] = useState(0);

@@ -5,7 +5,7 @@ import MarsImage from '../../assets/destination/image-mars.webp';
 import EuropaImage from '../../assets/destination/image-europa.webp';
 import TitanImage from '../../assets/destination/image-titan.webp';
 
-import data from '../../../starter-code/data.json';
+import data from '../../assets/data.json';
 
 export default function Destination() {
   const [currentDestination, setCurrentDestination] = useState(0);
