@@ -89,7 +89,7 @@ body:has(.home) {
   border: none;
   outline: none;
   user-select: none;
-  opacity: 0;
+  /* opacity: 0; */
   /* animation: textShowMove 0.75s 1s ease forwards; */
 }
 .home--cta::after {
