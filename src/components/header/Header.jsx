@@ -32,7 +32,7 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <NavLink to={'/home'}>
+      <NavLink to={'/home'} aria-label="Go back to home page">
         <Logo className={styles['header--logo']} />
       </NavLink>
       <div className={styles['header--line']}></div>
