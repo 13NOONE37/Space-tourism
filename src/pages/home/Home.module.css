@@ -43,16 +43,16 @@ body:has(.home) {
   letter-spacing: 2.7px;
 
   text-transform: uppercase;
-  /* opacity: 0;
-  animation: textShow 0.75s 0.25s ease forwards; */
+  opacity: 0;
+  animation: textShow 0.75s 0.25s ease forwards;
 }
 .home--heading--2 {
   font-family: 'Bellefair';
   font-size: 80px;
   font-weight: 400;
   text-transform: uppercase;
-  /* opacity: 0;
-  animation: textShow 0.75s 0.25s ease forwards; */
+  opacity: 0;
+  animation: textShow 0.75s 0.25s ease forwards;
 }
 .home--paragraph {
   font-family: 'Barlow Condensed';
@@ -60,8 +60,8 @@ body:has(.home) {
   line-height: 25px;
   text-align: center;
   color: var(--primary);
-  /* opacity: 0;
-  animation: textShow 0.75s 1.75s ease forwards; */
+  opacity: 0;
+  animation: textShow 0.75s 1.75s ease forwards;
 }
 .home--cta {
   margin-top: 50px;
@@ -89,8 +89,8 @@ body:has(.home) {
   border: none;
   outline: none;
   user-select: none;
-  /* opacity: 0; */
-  /* animation: textShowMove 0.75s 1s ease forwards; */
+  opacity: 0;
+  animation: textShowMove 0.75s 1s ease forwards;
 }
 .home--cta::after {
   content: '';
